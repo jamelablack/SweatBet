@@ -1,14 +1,10 @@
 Rails.application.routes.draw do
-  root to: 'ui#index'
-  get 'ui(/:action)', controller: 'ui'
-  resources :users, only: [:create, :show] do
-    collection do
-      get :search
-    end
-  end
-  resources :teams, only: [:create, :show, :update] do
-    collection do
-      get :search
-    end
+  root to: 'workouts#index', as: '/home'
+
+  resources :users, only: [:create, :show]
+  resources :teams, only: [:create, :show, :update]
+
+  get '/sign_in', to: 'sessions#new'
+  get '/sign_out', to: 'sessions#destroy'
   end
 end
