@@ -1,0 +1,37 @@
+%article.video
+  .container
+    .row
+      .video_large_cover.col-sm-7.col-sm-offset-1
+        = image_tag @user.picture.url, alt: "User Avatar"
+      .video_info.col-sm-3
+        %header
+          %h2= @user.name
+          %span Age:
+          = @user.age
+        %span Stats
+          %p Height
+          = @user.height
+          %p Weight
+          = @user.weight
+          %p  Goal
+          = @user.goal
+
+        .actions
+          %a.btn.btn-primary(href="") View Team Stats
+          %a.btn.btn-default(href="") + Log Workout
+
+%section.reviews.container
+  .row
+    .col-sm-10.col-sm-offset-1
+      %header
+        %h3 Workouts (#{@workouts.count})
+      %ul
+        - @workouts.each do |workout|
+          %article.review
+            %li.row
+              .col-sm-2
+                %span Date: #{workout.date}
+                %p Duration: #{workout.duration}
+              .col-sm-8
+                %p Workout: #{workout.type}
+                = link_to "More Info", workout
