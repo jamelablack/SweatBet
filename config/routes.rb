@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'workouts#index', as: '/home'
+  root to: 'events#index', as: '/home'
 
   resources :users, only: [:create, :show]
   resources :teams, only: [:create, :show, :update]
