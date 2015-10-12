@@ -11,7 +11,7 @@ gem 'jquery-rails'
 gem 'rails', '4.1.4'
 gem 'sass-rails', '>= 3.2'
 gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'sqlite3'
+gem 'pg'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'haml', '~> 4.0.6'
